@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "my_first_chart.fullname" . }}
+  name: {{ include "my-first-chart.fullname" . }}
   labels:
-    {{- include "my_first_chart.labels" . | nindent 4 }}
+    {{- include "my-first-chart.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "my_first_chart.selectorLabels" . | nindent 4 }}
+    {{- include "my-first-chart.selectorLabels" . | nindent 4 }}
